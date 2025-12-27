@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Change Image on Hover in CSS</title>
+<style>
+   body {
+  background-color: #fefefe;
+  overflow: hidden;
+}
+.container-hoa {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100vh;
+  z-index: -1; 
+}
+.hoa {
+  position: absolute;
+  width: 50px; height: 50px;
+  background-image: url('76e4b431ecf0955ad2772843de98214b_preview_rev_1.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+@keyframes roi-xuong {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(110vh) rotate(180deg) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+.hoa {
+  animation-name: roi-xuong;
+  animation-duration: 10s; 
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: calc(var(--delay) * 1s); 
+  
+  top: 0;
+  left: calc(var(--left) * 1vw);
+}
+
+.hoa:nth-child(1) { --delay: 1; --left: 10; }
+.hoa:nth-child(2) { --delay: 4; --left: 30; }
+.hoa:nth-child(3) { --delay: 2; --left: 50; }
+.hoa:nth-child(4) { --delay: 3; --left: 60; }
+.hoa:nth-child(5) { --delay: 5; --left: 90; }
+.hoa:nth-child(6) { --delay: 6; --right: 10; }
+.hoa:nth-child(7) { --delay: 3; --left: 80; }
+.hoa:nth-child(8) { --delay: 4; --left: 60; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hoa"></div>
+    <div class="hoa"></div>
+    <div class="hoa"></div>
+	<div class="hoa"></div>    
+	<div class="hoa"></div>
+	<div class="hoa"></div>
+	<div class="hoa"></div>
+</div>
+</body>
+</html>
